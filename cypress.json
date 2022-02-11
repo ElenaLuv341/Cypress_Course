@@ -1,5 +1,12 @@
 {
+        "baseURL": "http://www.webdriveruniversity.com/",
     
-        "chromeWebSecurity": false
+        "chromeWebSecurity": false,
+        "defaultCommandTimeout": 10000,
+        "pageLoadTimeout": 30000,
+        "env": {
+                "webdriveruni_homepage": "http://www.webdriveruniversity.com/",
+                "first_name": "Sarah"
+        }
       
 }
