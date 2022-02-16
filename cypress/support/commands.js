@@ -20,14 +20,12 @@
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 Cypress.Commands.add('navigate_to_Wedriveruni_Homepage', () =>{
-    
+    cy.visit("/")
 })
 
-
-
-
-
-
+Cypress.Commands.add('navigate_to_Wedriveruni_Check_box_page', () =>{
+    cy.visit("/" + "/Dropdown-Checkboxes-RadioButtons/index.html")
+})
 
 
 
@@ -44,7 +42,7 @@ Cypress.Commands.add('addProductToBasket', productName =>{
     cy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {
         if($el.text() === productName){
             cy.log($el.text());
-            cy.get('.productcart').eq(index).click();
+            cy.get('.productcart').eq(index).click({force: true});
         }
       
     });

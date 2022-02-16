@@ -1,10 +1,19 @@
 /// <reference types="cypress" />
 describe('Test Contact Us form via Automation test store', () => {
     before(function () {
-        cy.fixture('userDetails.json').as('user')
+        cy.viewport(550, 750)
+        cy.fixture('userDetails.json').as('user');
+        cy.clearLocalStorage();
+        cy.clearCookies();
 
     })
-    it.only('Should be able to submit a successful submission via contact us form', () => {
+    it.only('Should be able to submit a successful submission via contact us form', {
+        retries:{
+            runMode: 2,
+            openMode: 2
+        }
+    }, () => {
+        
         cy.visit('https://www.automationteststore.com/');
         cy.get("a[href$='contact']").click().then(function (linkedText) {
             cy.log('Clicked on link using text: ' + linkedText.text());

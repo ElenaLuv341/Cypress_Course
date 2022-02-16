@@ -2,8 +2,8 @@
 
 describe('Verifying check-boxes via webdriveruni', () => {
     beforeEach(function(){
-        cy.visit('/') // doesn't work for me 
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force: true});
+        cy.navigate_to_Wedriveruni_Check_box_page()
+        // cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force: true});
     })
     it('Check and validate checkbox', () => {
         // cy.get('#checkboxes > :nth-child(1) > input').check()
