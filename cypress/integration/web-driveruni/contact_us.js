@@ -42,13 +42,16 @@ describe('Test Contact Us form via WebdriverUni', () => {
     });
 
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
+        if(Cypress.isBrowser('chrome')) {
+
+        } else {
         // cy.get('[name="first_name"]').type(data.first_name);
         // cy.get('[name="last_name"]').type(data.last_name);
         // cy.get('textarea.feedback-input').type('How can I learn Cypress?')
         // cy.get('[type="submit"]').click();
         // cy.get('body').contains('Error: all fields are required')
         contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, ' ', 'How can I learn Cypress?', 'body', 'Invalid email address');
-
+        }
         // cy.webdriverUni_ContactUs_Submission(data.first_name, data.last_name, ' ', 'How can I learn Cypress?', 'body', 'Invalid email address');
 
     });
