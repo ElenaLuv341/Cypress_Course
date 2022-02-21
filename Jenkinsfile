@@ -17,6 +17,17 @@ pipeline{
                         bat 'npm run triggerAllTests-autostore-dashboard'
                     }
                 }
+                stage('Slave Node2') {
+                    agent{
+                        label "remote_node2"
+                    }
+                    steps{
+                        git url: 'https://github.com/ElenaLuv341/Cypress_Course.git'
+                        bat 'npm install'
+                        bat 'npm update'
+                        bat 'npm run triggerAllTests-autostore-dashboard'
+                    }
+                }
             }
         }
     }
