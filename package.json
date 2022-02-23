@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "cypress": "^6.5.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
@@ -10,7 +11,12 @@
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.0.1"
   },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/step_definitions"
+  },
   "scripts": {
+    "triggerAllTestsWithCucumber":"npx cypress run --spec cypress/integration/web-driveruni/features/*.feature --browser chrome",
     "triggerAllTests-headless": "npx cypress run",
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-chrome": "npx cypress run --browser chrome",
